@@ -73,9 +73,10 @@ Change `/etc/apache2/mods-enabled/dir.conf` so Apache looks for `index.php` firs
 >   `DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm`  
 > `</IfModule>`  
 
-Add info.php file to the webroot to test PHP install success:  
+Add info.php file to the webroot to test PHP install success, but delete after testing:  
 > `<?php`    
 >   `phpinfo();`  
 > `?>`  
 
-
+Install phpMyAdmin:  
+`sudo apt-get install phpmyadmin apache2-utils`
