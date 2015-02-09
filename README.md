@@ -1,5 +1,5 @@
-Chromebook Crouton Help
-=======================
+Chromebook Crouton Drupal Development
+===
 Show chroot install options:	
 `sh ~/Downloads/crouton -t help`
 
