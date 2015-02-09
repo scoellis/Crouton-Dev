@@ -100,17 +100,10 @@ Increase allowed database upload size in `/etc/php5/apach2/php.ini`:
 Enable rewrite functionality in Apache:  
 `sudo a2enmod rewrite`
 
-Update the virtual host file at `sudo nano /etc/apache2/sites-enabled/000-default.conf`:  
-> `<VirtualHost *:80>`  
-`. . .`  
-`ServerName  **example.com**`  
-`ServerAdmin **webmaster@example.com**`  
-`DocumentRoot /var/www/html`  
-`<Directory /var/www/html>`  
+Update the virtual host file at `sudo nano /etc/apache2/sites-enabled/000-default.conf` below doc root:  
+> `<Directory /var/www/html>`  
 `AllowOverride All`  
 `</Directory>`  
-`. . .`  
-`</VirtualHost>`  
 
 Install Netbeans
 ---
