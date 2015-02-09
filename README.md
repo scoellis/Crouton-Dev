@@ -68,14 +68,14 @@ Plug security gaps in MySQL:
 Install PHP:  
 `sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt`
 
-Change /etc/apache2/mods-enabled/dir.conf so Apache looks for index.php first:  
-> `<IfModule mod_dir.c>
->   DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm  
-> </IfModule>`  
+Change `/etc/apache2/mods-enabled/dir.conf` so Apache looks for `index.php` first:  
+> `<IfModule mod_dir.c>`  
+>   `DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm`  
+> `</IfModule>`  
 
 Add info.php file to the webroot to test PHP install success:  
-> `<?php  
->   phpinfo();  
-> ?>`  
+> `<?php`    
+>   `phpinfo();`  
+> `?>`  
 
 
