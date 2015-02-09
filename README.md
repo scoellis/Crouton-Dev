@@ -66,7 +66,7 @@ Plug security gaps in MySQL:
 `sudo mysql_secure_installation`
 
 Install PHP:  
-`sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt`
+`sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt php5-gd php5-curl libssh2-php`
 
 Change `/etc/apache2/mods-enabled/dir.conf` so Apache looks for `index.php` first:  
 > `<IfModule mod_dir.c>`  
@@ -80,3 +80,47 @@ Add info.php file to the webroot to test PHP install success, but delete after t
 
 Install phpMyAdmin:  
 `sudo apt-get install phpmyadmin apache2-utils`
+
+Install Drupal
+---
+Install Git the easy way:  
+`sudo apt-get install git`
+
+Install Drush the easy way - may require changing `~/.drush` permissions and logout before it can be called by a regular user:  
+`sudo apt-get install php-pear`
+`pear channel-discover pear.drush.org`
+`pear install drush/drush`
+`drush version`
+
+Add some tweaks to '/etc/php5/apach2/php.ini`:  
+> `. . .`  
+> `expose_php = Off`  
+> `. . .`  
+> `allow_url_fopen = Off`  
+> `. . . .`  
+
+Enable rewrite functionality in Apache:
+`sudo a2enmod rewrite`
+
+Update the virtual host file at `sudo nano /etc/apache2/sites-enabled/000-default.conf`:  
+> `<VirtualHost *:80>`  
+    `. . .`  
+    `ServerName  **example.com**`  
+    `ServerAdmin **webmaster@example.com**`  
+    `DocumentRoot /var/www/html`  
+    `<Directory /var/www/html>`  
+      `AllowOverride All`  
+    `</Directory>`  
+    `. . .`  
+`</VirtualHost>`  
+
+Install Netbeans
+---
+Install Java Development Kit:  
+`sudo apt-get install openjdk-7-jdk`  
+
+Download latest Netbeans PHP version, make the file executable `chmod +x` and install `sh netbeans*`
+
+Setup Xdebug:
+
+
