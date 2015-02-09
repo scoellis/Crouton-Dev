@@ -33,16 +33,16 @@ Add a line to /etc/rc.local to open the firewall to accept all inbound traffic:
 > `/sbin/iptables -P INPUT ACCEPT`
 
 Add lines to /etc/rc.local and leave the exit 0 at the end of the file:  
-> `# Uncomment the following lines if you want SSH server to work:
-> #mkdir -p -m0755 /var/run/sshd 
-> #/usr/sbin/sshd 
-> /etc/init.d/apache2 start  
-> /etc/init.d/tomcat6 start  
-> export HOME=/etc/mysql  
-> umask 007  
-> [ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld  
-> /usr/sbin/mysqld &`  
-  
+> `# Uncomment the following lines if you want SSH server to work:`  
+`#mkdir -p -m0755 /var/run/sshd`  
+`#/usr/sbin/sshd`  
+`/etc/init.d/apache2 start`  
+`/etc/init.d/tomcat6 start`  
+`export HOME=/etc/mysql`  
+`umask 007`  
+`[ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld`  
+`/usr/sbin/mysqld &`  
+
 Share the Webroot with ChromeOS and other Chroots  
 ---  
 Add lines to /etc/crouton/shares:  
