@@ -33,15 +33,15 @@ Add a line to /etc/rc.local to open the firewall to accept all inbound traffic:
 > `/sbin/iptables -P INPUT ACCEPT`
 
 Add lines to /etc/rc.local and leave the exit 0 at the end of the file:  
-> `# Uncomment the following lines if you want SSH server to work:`  
+> `# Uncomment the following lines as you need them:`  
 `#mkdir -p -m0755 /var/run/sshd`  
 `#/usr/sbin/sshd`  
-`/etc/init.d/apache2 start`  
-`/etc/init.d/tomcat6 start`  
-`export HOME=/etc/mysql`  
-`umask 007`  
-`[ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld`  
-`/usr/sbin/mysqld &`  
+`#/etc/init.d/apache2 start`  
+`#/etc/init.d/tomcat6 start`  
+`#export HOME=/etc/mysql`  
+`#umask 007`  
+`#[ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld`  
+`#/usr/sbin/mysqld &`  
 
 Share the Webroot with ChromeOS and other Chroots  
 ---  
@@ -71,13 +71,13 @@ Install PHP:
 
 Change `/etc/apache2/mods-enabled/dir.conf` so Apache looks for `index.php` first:  
 > `<IfModule mod_dir.c>`  
->   `DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm`  
-> `</IfModule>`  
+`DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm`  
+`</IfModule>`  
 
 Add info.php file to the webroot to test PHP install success, but delete after testing:  
 > `<?php`    
->   `phpinfo();`  
-> `?>`  
+`phpinfo();`  
+`?>`  
 
 Install phpMyAdmin:  
 `sudo apt-get install phpmyadmin apache2-utils`
@@ -95,25 +95,25 @@ Install Drush the easy way - may require changing `~/.drush` permissions and log
 
 Add some tweaks to '/etc/php5/apach2/php.ini`:  
 > `. . .`  
-> `expose_php = Off`  
-> `. . .`  
-> `allow_url_fopen = Off`  
-> `. . . .`  
+`expose_php = Off`  
+`. . .`  
+`allow_url_fopen = Off`  
+`. . . .`  
 
 Enable rewrite functionality in Apache:
 `sudo a2enmod rewrite`
 
 Update the virtual host file at `sudo nano /etc/apache2/sites-enabled/000-default.conf`:  
 > `<VirtualHost *:80>`  
-	   `. . .`  
-	   `ServerName  **example.com**`  
-	   `ServerAdmin **webmaster@example.com**`  
-	   `DocumentRoot /var/www/html`  
-	   `<Directory /var/www/html>`  
-		   `AllowOverride All`  
-	   `</Directory>`  
-	   `. . .`  
-   `</VirtualHost>`  
+`. . .`  
+`ServerName  **example.com**`  
+`ServerAdmin **webmaster@example.com**`  
+`DocumentRoot /var/www/html`  
+`<Directory /var/www/html>`  
+`AllowOverride All`  
+`</Directory>`  
+`. . .`  
+`</VirtualHost>`  
 
 Install Netbeans
 ---
