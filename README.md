@@ -93,14 +93,11 @@ Install Drush the easy way - may require changing `~/.drush` permissions and log
 `sudo pear install drush/drush`  
 `sudo drush version`  
 
-Add some tweaks to '/etc/php5/apach2/php.ini`:  
-> `. . .`  
-`expose_php = Off`  
-`. . .`  
-`allow_url_fopen = Off`  
-`. . . .`  
+Increase allowed database upload size in `/etc/php5/apach2/php.ini`:  
+> `post_max_size = 80M`  
+`upload_max_filesize = 20M`  
 
-Enable rewrite functionality in Apache:
+Enable rewrite functionality in Apache:  
 `sudo a2enmod rewrite`
 
 Update the virtual host file at `sudo nano /etc/apache2/sites-enabled/000-default.conf`:  
