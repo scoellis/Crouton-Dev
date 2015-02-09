@@ -41,5 +41,9 @@ Run a server in chroot
 	>[ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld  
 	>/usr/sbin/mysqld &
 
-Share the Webroot with ChromeOS and other Chroots
+Share the Webroot with ChromeOS and other Chroots  
 -------------------------------------------------
+- Add lines to /etc/crouton/shares: 
+	>downloads/mirc /var/www/html/mirc  
+	downloads/drupaltutor /var/www/html/drupaltutor  
+
