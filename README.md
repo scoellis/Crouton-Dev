@@ -3,25 +3,25 @@ Chromebook Crouton Help
 Show chroot install options:	
 `sh ~/Downloads/crouton -t help`
 
-Install Ubuntu 14 (Trusty) Gnome Desktop Environment chroot:
+Install Ubuntu 14 (Trusty) Gnome Desktop Environment chroot:	
 `sudo sh ~/Downloads/crouton -n trusty-gnome -r trusty -t audio,cli-extra,keyboard,gnome,xiwi` 
 
-Install minimal Ubuntu 14 (Trusty) CLI chroot:
+Install minimal Ubuntu 14 (Trusty) CLI chroot:	
 `sudo sh ~/Downloads/crouton -n trusty-cli -r trusty -t cli-extra`
 
-Delete a chroot: 
+Delete a chroot: 	
 `sudo edit-chroot -d trusty-cli`
 
-Backup a chroot:
+Backup a chroot:	
 `sudo edit-chroot -b trusty-cli` 
 
-Restore a chroot: 
+Restore a chroot:	
 `sudo edit-chroot -r trusty-cli`
 
-Start a Gnome session in the background:
+Start a Gnome session in the background:	
 `sudo startgnome -b`
 
-Enter a chroot on the command line:
+Enter a chroot on the command line:	
 `sudo enter-chroot -n trusty-cli`
 
 Run a server in chroot
