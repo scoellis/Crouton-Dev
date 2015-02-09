@@ -43,7 +43,7 @@ Run a server in chroot
 
 Share the Webroot with ChromeOS and other Chroots  
 -------------------------------------------------
-- Add lines to /etc/crouton/shares: 
+- Add lines to /etc/crouton/shares:  
 	>downloads/mirc /var/www/html/mirc  
-	downloads/drupaltutor /var/www/html/drupaltutor  
+	>downloads/drupaltutor /var/www/html/drupaltutor  
 
