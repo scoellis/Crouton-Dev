@@ -32,14 +32,17 @@ Run a server in chroot
 	>/sbin/iptables -P INPUT ACCEPT
 
 - Add lines to /etc/rc.local to launch the service you want, be sure to leave the exit 0 at the end of the file: 
-	>mkdir -p -m0755 /var/run/sshd 
-	>/usr/sbin/sshd 
-	>/etc/init.d/apache2 start 
-	>/etc/init.d/tomcat6 start 
-	>export HOME=/etc/mysql 
-	>umask 007 
-	>[ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld 
-	>/usr/sbin/mysqld & 
+	>mkdir -p -m0755 /var/run/sshd
+	
+	>/usr/sbin/sshd
+	
+	>/etc/init.d/apache2 start
+	
+	>/etc/init.d/tomcat6 start
+	>export HOME=/etc/mysql
+	>umask 007
+	>[ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld
+	>/usr/sbin/mysqld &
 
 Share the Webroot with ChromeOS and other Chroots
 -------------------------------------------------
