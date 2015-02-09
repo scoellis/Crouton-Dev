@@ -26,12 +26,12 @@ Enter a chroot on the command line:
 
 Run a server in chroot
 ---
-- Install the iptables package, `sudo apt-get install iptables`
+Install the iptables package, `sudo apt-get install iptables`
 
-- Add a line to /etc/rc.local to open the firewall to accept all inbound traffic: 
+Add a line to /etc/rc.local to open the firewall to accept all inbound traffic: 
 	>/sbin/iptables -P INPUT ACCEPT
 
-- Add lines to /etc/rc.local to launch the service you want, be sure to leave the exit 0 at the end of the file: 
+Add lines to /etc/rc.local and leave the exit 0 at the end of the file: 
 	>mkdir -p -m0755 /var/run/sshd  
 	>/usr/sbin/sshd  
 	>/etc/init.d/apache2 start  
@@ -43,15 +43,11 @@ Run a server in chroot
 
 Share the Webroot with ChromeOS and other Chroots  
 ---  
-- Add lines to /etc/crouton/shares:  
-	> downloads/mirc /var/www/html/mirc  
-	> downloads/drupaltutor /var/www/html/drupaltutor  
-	> Thest
+Add lines to /etc/crouton/shares:  
+	>downloads/mirc /var/www/html/mirc  
+	>downloads/drupaltutor /var/www/html/drupaltutor  
 
-Test
-
-> Test  
-
+This is a test.
 
 
   
