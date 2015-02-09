@@ -26,12 +26,13 @@ Enter a chroot on the command line:
 
 Run a server in chroot
 ---
-Install the iptables package, `sudo apt-get install iptables`
+Install the iptables package:  
+`sudo apt-get install iptables`
 
-Add a line to /etc/rc.local to open the firewall to accept all inbound traffic: 
+Add a line to /etc/rc.local to open the firewall to accept all inbound traffic:  
 	>/sbin/iptables -P INPUT ACCEPT
 
-Add lines to /etc/rc.local and leave the exit 0 at the end of the file: 
+Add lines to /etc/rc.local and leave the exit 0 at the end of the file:  
 	>mkdir -p -m0755 /var/run/sshd  
 	>/usr/sbin/sshd  
 	>/etc/init.d/apache2 start  
@@ -39,7 +40,7 @@ Add lines to /etc/rc.local and leave the exit 0 at the end of the file:
 	>export HOME=/etc/mysql  
 	>umask 007  
 	>[ -d /var/run/mysqld ] || install -m 755 -o mysql -g root -d /var/run/mysqld  
-	>/usr/sbin/mysqld &
+	>/usr/sbin/mysqld &  
 
 Share the Webroot with ChromeOS and other Chroots  
 ---  
