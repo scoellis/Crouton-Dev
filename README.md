@@ -89,9 +89,9 @@ Install Git the easy way:
 
 Install Drush the easy way - may require changing `~/.drush` permissions and logout before it can be called by a regular user:  
 `sudo apt-get install php-pear`  
-`pear channel-discover pear.drush.org`  
-`pear install drush/drush`  
-`drush version`  
+`sudo pear channel-discover pear.drush.org`  
+`sudo pear install drush/drush`  
+`sudo drush version`  
 
 Add some tweaks to '/etc/php5/apach2/php.ini`:  
 > `. . .`  
