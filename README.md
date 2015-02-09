@@ -50,32 +50,32 @@ Add lines to /etc/crouton/shares:
 
 Install LAMP Stack
 ---
-Update packages:
+Update packages:  
 `sudo apt-get update`
 
-Install Apache:
+Install Apache:  
 `sudo apt-get install apache2`
 
-Install MySQL and helper apps:
+Install MySQL and helper apps:  
 `sudo apt-get install mysql-server php5-mysql`
 
-Add database structure to MySQL:
+Add database structure to MySQL:  
 `sudo mysql_install_db`
 
-Plug security gaps in MySQL:
+Plug security gaps in MySQL:  
 `sudo mysql_secure_installation`
 
-Install PHP:
+Install PHP:  
 `sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt`
 
-Change /etc/apache2/mods-enabled/dir.conf so Apache looks for index.php first:
-> <IfModule mod_dir.c>
->   DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
-> </IfModule>
+Change /etc/apache2/mods-enabled/dir.conf so Apache looks for index.php first:  
+> `<IfModule mod_dir.c>
+>   DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm  
+> </IfModule>`  
 
-Add info.php file to the webroot to test PHP install success:
-> <?php
->   phpinfo();
-> ?>
+Add info.php file to the webroot to test PHP install success:  
+> `<?php  
+>   phpinfo();  
+> ?>`  
 
 
