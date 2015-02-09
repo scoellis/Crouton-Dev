@@ -104,14 +104,14 @@ Enable rewrite functionality in Apache:
 
 Update the virtual host file at `sudo nano /etc/apache2/sites-enabled/000-default.conf`:  
 > `<VirtualHost *:80>`  
-   `  . . .`  
-   `  ServerName  **example.com**`  
-   `  ServerAdmin **webmaster@example.com**`  
-   `  DocumentRoot /var/www/html`  
-   `  <Directory /var/www/html>`  
-   `    AllowOverride All`  
-   `  </Directory>`  
-   `  . . .`  
+	   `. . .`  
+	   `ServerName  **example.com**`  
+	   `ServerAdmin **webmaster@example.com**`  
+	   `DocumentRoot /var/www/html`  
+	   `<Directory /var/www/html>`  
+		   `AllowOverride All`  
+	   `</Directory>`  
+	   `. . .`  
    `</VirtualHost>`  
 
 Install Netbeans
